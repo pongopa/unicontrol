@@ -1,0 +1,1 @@
+<?php $this->Productos->views_add(); ?>

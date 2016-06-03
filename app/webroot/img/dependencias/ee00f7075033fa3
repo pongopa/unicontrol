@@ -1,0 +1,22 @@
+﻿SELECT a.id, 
+	(select x.institucion_id from dependencias x where x.id = a.dependencia_id) as institucion_id,
+       a.dependencia_id, 
+       a.ano, 
+       codigo_presupuestario,
+       codigos(a.codigo_presupuestario,'sector') as sector,
+       codigos(a.codigo_presupuestario,'programa') as programa,
+       codigos(a.codigo_presupuestario,'subprograma') as subprograma,
+       codigos(a.codigo_presupuestario,'proyecto') as proyecto,
+       codigos(a.codigo_presupuestario,'activobra') as activobra,
+       codigos(a.codigo_presupuestario,'partida') as partida,
+       codigos(a.codigo_presupuestario,'generica') as generica,
+       codigos(a.codigo_presupuestario,'especifica') as especifica,
+       codigos(a.codigo_presupuestario,'subespecifica') as subespecifica,
+       codigos(a.codigo_presupuestario,'auxiliar') as auxiliar,
+       a.tipo_codigo, 
+       a.tipo_gasto, 
+       a.tipo_presupuesto, 
+       a.asignacion_anual 
+
+        
+FROM   frm_presupuestos a where a.dependencia_requerimiento=0; 

@@ -1,0 +1,1 @@
+<?php $this->Proveedor->views_add_banco($var);?>
